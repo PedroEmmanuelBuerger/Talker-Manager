@@ -25,8 +25,25 @@ const generateToken = () => {
   return validateToken;
 };
 
+const writeTalkers = async (newTalkers) => {
+  const { name, age, talk } = newTalkers;
+  const allTalkers = await fs.readFile(talkerPath);
+  const allTalkerJson = JSON.parse(allTalkers);
+  const id = allTalkerJson.length + 1;
+  const newTalkerObj = {
+    name,
+    age,
+    id,
+    talk,
+  };
+  const allNewTalkers = JSON.stringify([...allTalkerJson, newTalkerObj]);
+  await fs.writeFile(path.resolve(__dirname, talkerPath), allNewTalkers);
+  return newTalkerObj;
+};
+
 module.exports = {
 readTalkers,
 readTalkersId,
 generateToken,
+writeTalkers,
 };
