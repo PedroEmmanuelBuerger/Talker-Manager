@@ -1,7 +1,8 @@
 const express = require('express');
 
 const talkerRouter = express.Router();
-const { readTalkers, readTalkersId, writeTalkers } = require('../utils/fsFunctions');
+const { readTalkers, readTalkersId, writeTalkers,
+    attTalkers } = require('../utils/fsFunctions');
 
 const tokkenMiddleware = require('../middlewares/tokenMiddle');
 const nameMiddleware = require('../middlewares/nameMiddle');
@@ -33,4 +34,16 @@ talkerRouter.post('/',
     res.status(201).json(newTalkerJson);
 });
 
+talkerRouter.put('/:id',
+tokkenMiddleware, nameMiddleware, ageMiddleware,
+    talkMiddleware, watchedMiddleware, rateMiddleware,
+ async (req, res) => {
+    const { id } = req.params;
+    const newTalker = req.body;
+    const attTalker = await attTalkers(id, newTalker);
+    if (!attTalker) {
+    return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
+    }
+    res.status(200).json(attTalker);
+});
 module.exports = talkerRouter;

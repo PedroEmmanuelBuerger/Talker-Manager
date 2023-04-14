@@ -41,9 +41,23 @@ const writeTalkers = async (newTalkers) => {
   return newTalkerObj;
 };
 
+const attTalkers = async (id, newTalker) => {
+  const allTalkers = await fs.readFile(talkerPath);
+  const allTalkerJson = JSON.parse(allTalkers);
+  const alteredTalkerIndex = allTalkerJson.findIndex((talker) => talker.id === Number(id));
+  if (alteredTalkerIndex === -1) return false;
+  const alteredTalkerObj = { ...allTalkerJson[alteredTalkerIndex], ...newTalker };
+  const updatedTalkers = [...allTalkerJson];
+  updatedTalkers[alteredTalkerIndex] = alteredTalkerObj;
+  const updatedTalkersJson = JSON.stringify(updatedTalkers);
+  await fs.writeFile(talkerPath, updatedTalkersJson);
+  return alteredTalkerObj;
+};
+
 module.exports = {
 readTalkers,
 readTalkersId,
 generateToken,
 writeTalkers,
+attTalkers,
 };
