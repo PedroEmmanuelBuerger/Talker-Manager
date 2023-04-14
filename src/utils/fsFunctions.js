@@ -15,7 +15,18 @@ const readTalkersId = async (idPar) => {
     return filteredId;
 };
 
+const generateToken = () => {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let validateToken = '';
+  for (let i = 0; i < 16; i += 1) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    validateToken += characters[randomIndex];
+  }
+  return validateToken;
+};
+
 module.exports = {
 readTalkers,
 readTalkersId,
+generateToken,
 };
