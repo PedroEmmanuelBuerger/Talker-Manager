@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./ 
 RUN npm install
 
-# Copia testes do avaliador e arquivos do projeto
+# Copia testes do avaliador e arquivos do projet
 COPY __tests__ ./__tests__
 COPY .eslint* seed.sql jest.config.js ./
 
