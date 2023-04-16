@@ -54,10 +54,20 @@ const attTalkers = async (id, newTalker) => {
   return alteredTalkerObj;
 };
 
+const deleteTalker = async (id) => {
+const allTalkers = await fs.readFile(talkerPath);
+const allTalkerJson = JSON.parse(allTalkers);
+const talkersFiltered = allTalkerJson.filter((talker) => talker.id !== Number(id));
+const newTalkers = JSON.stringify(talkersFiltered);
+await fs.writeFile(talkerPath, newTalkers);
+return;
+};
+
 module.exports = {
 readTalkers,
 readTalkersId,
 generateToken,
 writeTalkers,
 attTalkers,
+deleteTalker
 };

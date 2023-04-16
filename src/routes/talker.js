@@ -2,7 +2,7 @@ const express = require('express');
 
 const talkerRouter = express.Router();
 const { readTalkers, readTalkersId, writeTalkers,
-    attTalkers } = require('../utils/fsFunctions');
+    attTalkers, deleteTalker } = require('../utils/fsFunctions');
 
 const tokkenMiddleware = require('../middlewares/tokenMiddle');
 const nameMiddleware = require('../middlewares/nameMiddle');
@@ -46,4 +46,11 @@ tokkenMiddleware, nameMiddleware, ageMiddleware,
     }
     res.status(200).json(attTalker);
 });
+
+talkerRouter.delete('/:id', tokkenMiddleware, async(req, res) => {
+    const { id } = req.params;
+    await deleteTalker(id);
+   return res.status(204).json();
+});
+
 module.exports = talkerRouter;
