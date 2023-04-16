@@ -60,7 +60,6 @@ const allTalkerJson = JSON.parse(allTalkers);
 const talkersFiltered = allTalkerJson.filter((talker) => talker.id !== Number(id));
 const newTalkers = JSON.stringify(talkersFiltered);
 await fs.writeFile(talkerPath, newTalkers);
-return;
 };
 
 module.exports = {
@@ -69,5 +68,5 @@ readTalkersId,
 generateToken,
 writeTalkers,
 attTalkers,
-deleteTalker
+deleteTalker,
 };

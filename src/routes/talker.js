@@ -10,10 +10,16 @@ const ageMiddleware = require('../middlewares/ageMiddle');
 const talkMiddleware = require('../middlewares/talkMiddle');
 const watchedMiddleware = require('../middlewares/watchedAt');
 const rateMiddleware = require('../middlewares/rateMiddle');
+const queryMiddleware = require('../middlewares/qMiddle');
 
 talkerRouter.get('/', async (_req, res) => {
     const talkers = await readTalkers();
     res.status(200).json(talkers);
+});
+
+talkerRouter.get('/search', tokkenMiddleware, queryMiddleware, async (req, res) => {
+    const result = req.nameQuery;
+    return res.status(200).json(result);
 });
 
 talkerRouter.get('/:id', async (req, res) => {
@@ -47,7 +53,7 @@ tokkenMiddleware, nameMiddleware, ageMiddleware,
     res.status(200).json(attTalker);
 });
 
-talkerRouter.delete('/:id', tokkenMiddleware, async(req, res) => {
+talkerRouter.delete('/:id', tokkenMiddleware, async (req, res) => {
     const { id } = req.params;
     await deleteTalker(id);
    return res.status(204).json();
