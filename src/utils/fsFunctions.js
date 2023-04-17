@@ -62,6 +62,11 @@ const newTalkers = JSON.stringify(talkersFiltered);
 await fs.writeFile(talkerPath, newTalkers);
 };
 
+const rewriteAllTalkers = async (newTalkers) => {
+  const finishTratament = JSON.stringify(newTalkers);
+  await fs.writeFile(talkerPath, finishTratament);
+};
+
 module.exports = {
 readTalkers,
 readTalkersId,
@@ -69,4 +74,5 @@ generateToken,
 writeTalkers,
 attTalkers,
 deleteTalker,
+rewriteAllTalkers,
 };

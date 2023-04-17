@@ -2,8 +2,9 @@ const express = require('express');
 
 const talkerRouter = express.Router();
 const { readTalkers, readTalkersId, writeTalkers,
-    attTalkers, deleteTalker } = require('../utils/fsFunctions');
+    attTalkers, deleteTalker, rewriteAllTalkers } = require('../utils/fsFunctions');
 
+const patchMiddleware = require('../middlewares/patchMiddle');
 const tokkenMiddleware = require('../middlewares/tokenMiddle');
 const nameMiddleware = require('../middlewares/nameMiddle');
 const ageMiddleware = require('../middlewares/ageMiddle');
@@ -62,5 +63,16 @@ talkerRouter.delete('/:id', tokkenMiddleware, async (req, res) => {
     await deleteTalker(id);
    return res.status(204).json();
 });
+
+talkerRouter.patch('/rate/:id', tokkenMiddleware, patchMiddleware, async (req, res) => {
+    const { id } = req.params;
+    const newRating = req.body.rate;
+    const allTalkers = await readTalkers();
+    const filteredTalker = allTalkers.find((talker) => talker.id === Number(id));
+    filteredTalker.talk.rate = Number(newRating);
+    await rewriteAllTalkers(allTalkers);
+    console.log(filteredTalker);
+    return res.status(204).json();
+  });
 
 module.exports = talkerRouter;
