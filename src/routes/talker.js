@@ -12,6 +12,7 @@ const watchedMiddleware = require('../middlewares/watchedAt');
 const rateMiddleware = require('../middlewares/rateMiddle');
 const queryMiddleware = require('../middlewares/qMiddle');
 const rattSearchMiddleware = require('../middlewares/rateSearchMiddle');
+const watQueryMiddleware = require('../middlewares/watchQueryMiddle');
 
 talkerRouter.get('/', async (_req, res) => {
     const talkers = await readTalkers();
@@ -20,7 +21,7 @@ talkerRouter.get('/', async (_req, res) => {
 
 talkerRouter.get('/search', 
 tokkenMiddleware, queryMiddleware,
-rattSearchMiddleware, async (req, res) => {
+rattSearchMiddleware, watQueryMiddleware, async (req, res) => {
     const result = req.nameQuery;
     return res.status(200).json(result);
 });
