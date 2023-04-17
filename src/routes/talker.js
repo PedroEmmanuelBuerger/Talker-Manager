@@ -4,6 +4,7 @@ const talkerRouter = express.Router();
 const { readTalkers, readTalkersId, writeTalkers,
     attTalkers, deleteTalker, rewriteAllTalkers } = require('../utils/fsFunctions');
 
+const talkerDbDescronstc = require('../utils/talkerDb');
 const patchMiddleware = require('../middlewares/patchMiddle');
 const tokkenMiddleware = require('../middlewares/tokenMiddle');
 const nameMiddleware = require('../middlewares/nameMiddle');
@@ -14,6 +15,7 @@ const rateMiddleware = require('../middlewares/rateMiddle');
 const queryMiddleware = require('../middlewares/qMiddle');
 const rattSearchMiddleware = require('../middlewares/rateSearchMiddle');
 const watQueryMiddleware = require('../middlewares/watchQueryMiddle');
+const connection = require('../db/connection');
 
 talkerRouter.get('/', async (_req, res) => {
     const talkers = await readTalkers();
@@ -25,6 +27,12 @@ tokkenMiddleware, queryMiddleware,
 rattSearchMiddleware, watQueryMiddleware, async (req, res) => {
     const result = req.nameQuery;
     return res.status(200).json(result);
+});
+
+talkerRouter.get('/db', async (_req, res) => {
+    const [talkers] = await connection.execute('SELECT * FROM TalkerDB.talkers');
+    const newTalkers = talkerDbDescronstc(talkers);
+    return res.status(200).json(newTalkers);
 });
 
 talkerRouter.get('/:id', async (req, res) => {
