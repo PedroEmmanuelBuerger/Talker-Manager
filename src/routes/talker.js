@@ -11,13 +11,16 @@ const talkMiddleware = require('../middlewares/talkMiddle');
 const watchedMiddleware = require('../middlewares/watchedAt');
 const rateMiddleware = require('../middlewares/rateMiddle');
 const queryMiddleware = require('../middlewares/qMiddle');
+const rattSearchMiddleware = require('../middlewares/rateSearchMiddle');
 
 talkerRouter.get('/', async (_req, res) => {
     const talkers = await readTalkers();
     res.status(200).json(talkers);
 });
 
-talkerRouter.get('/search', tokkenMiddleware, queryMiddleware, async (req, res) => {
+talkerRouter.get('/search', 
+tokkenMiddleware, queryMiddleware,
+rattSearchMiddleware, async (req, res) => {
     const result = req.nameQuery;
     return res.status(200).json(result);
 });
