@@ -1,6 +1,6 @@
 # Project Talker Manager
 
-O Project Talker Manager é um gerenciador de conversas que permite aos usuários gerenciar e organizar as suas conversas. Ele foi desenvolvido como projeto final do curso de Desenvolvimento Web Full Stack da Trybe.
+O Project Talker Manager é um gerenciador de conversas que permite aos usuários gerenciar e organizar as suas conversas. Ele foi desenvolvido como projeto do curso de Desenvolvimento Web Full Stack da Trybe na seção de Back End.
 
 ## Funcionalidades
 
@@ -13,18 +13,10 @@ O Project Talker Manager é um gerenciador de conversas que permite aos usuário
 
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
-- React.js
-- Redux
-- Bootstrap
-- CSS
-- HTML
-
-## Requisitos
-
-- Node.js 14.x
-- MongoDB 4.x
+- MySql
+- Mocha
+- Chai
+- Sinon
 
 ## Instalação
 
@@ -42,6 +34,8 @@ npm install
 3. Inicie o servidor:
 
 npm start
+ou
+npm run dev
 
 
 4. Abra outra janela do terminal e instale as dependências do cliente:
