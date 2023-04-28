@@ -1,13 +1,66 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Project Talker Manager
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+O Project Talker Manager é um gerenciador de conversas que permite aos usuários gerenciar e organizar as suas conversas. Ele foi desenvolvido como projeto final do curso de Desenvolvimento Web Full Stack da Trybe.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Funcionalidades
+
+- Criar, editar e excluir conversas
+- Adicionar e remover mensagens de uma conversa
+- Filtrar as conversas por título ou mensagem
+- Ordenar as conversas por data de criação ou título
+
+## Tecnologias Utilizadas
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- React.js
+- Redux
+- Bootstrap
+- CSS
+- HTML
+
+## Requisitos
+
+- Node.js 14.x
+- MongoDB 4.x
+
+## Instalação
+
+1. Clone o repositório:
+
+git clone https://github.com/PedroEmmanuelBuerger/project-Talker-Manager.git
+
+
+2. Instale as dependências do servidor:
+
+cd project-Talker-Manager/server
+npm install
+
+
+3. Inicie o servidor:
+
+npm start
+
+
+4. Abra outra janela do terminal e instale as dependências do cliente:
+
+cd ../client
+npm install
+
+
+5. Inicie o cliente:
+
+npm start
+
+
+6. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
+
+## Contribuindo
+
+1. Fork este repositório.
+2. Crie um branch com a sua feature ou correção de bug: `git checkout -b minha-feature`.
+3. Faça commit das suas alterações: `git commit -m "Minha feature incrível"`.
+4. Envie o branch para o repositório remoto: `git push origin minha-feature`.
+5. Abra um Pull Request.
