@@ -1,51 +1,33 @@
-# Project Talker Manager
-
-O Project Talker Manager é um gerenciador de conversas que permite aos usuários gerenciar e organizar as suas conversas. Ele foi desenvolvido como projeto do curso de Desenvolvimento Web Full Stack da Trybe na seção de Back End.
+## Talker Manager
+Talker Manager é um projeto desenvolvido para gerenciar uma lista de palestrantes para um evento, permitindo que o usuário adicione, edite e remova palestrantes.
 
 ## Funcionalidades
-
-- Criar, editar e excluir conversas
-- Adicionar e remover mensagens de uma conversa
-- Filtrar as conversas por título ou mensagem
-- Ordenar as conversas por data de criação ou título
+O projeto possui as seguintes funcionalidades:
+Adicionar palestrante: permite adicionar informações do palestrante, como nome, descrição e tempo de apresentação.
+Editar palestrante: permite editar informações de um palestrante já adicionado.
+Remover palestrante: permite remover um palestrante da lista.
+Visualizar lista de palestrantes: exibe a lista de todos os palestrantes adicionados.
 
 ## Tecnologias Utilizadas
-
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+- JavaScript
 - Node.js
 - Express.js
 - MySql
-- Mocha
-- Chai
-- Sinon
+- Http requests
 
 ## Instalação
-
-1. Clone o repositório:
-
-git clone https://github.com/PedroEmmanuelBuerger/project-Talker-Manager.git
-
-
-2. Instale as dependências do servidor:
-
-cd project-Talker-Manager/server
-npm install
+- Para instalar e executar o projeto localmente, siga os passos abaixo:
+- Clone o repositório para sua máquina local.
+- Instale o Node.js e o MongoDB em sua máquina.
+- Na pasta do projeto, instale as dependências executando o comando npm install.
+- Configure as variáveis de ambiente de acordo com o arquivo .env.example.
+- Inicie o servidor executando o comando npm start.
+- Acesse o projeto em seu navegador no endereço http://localhost:3001.
 
 
-3. Inicie o servidor:
-
-npm start
-ou
-npm run dev
-
-4. Acesse o aplicativo em seu navegador em `http://localhost:3001`.
-
-## Principais aprendizados
-
-1. Fork este repositório.
-2. Crie um branch com a sua feature ou correção de bug: `git checkout -b minha-feature`.
-3. Faça commit das suas alterações: `git commit -m "Minha feature incrível"`.
-4. Envie o branch para o repositório remoto: `git push origin minha-feature`.
-5. Abra um Pull Request.
+## Principais Aprendizados
+Durante o desenvolvimento deste projeto, foram explorados os conceitos de desenvolvimento web com Node.js e Express.js, bem como a integração com banco de dados MongoDB. Além disso, foram praticadas habilidades de HTML, CSS e JavaScript para criar uma interface simples e intuitiva para o usuário.
 
 ## Conclusão
-Foi um projeto interessante para consolidar o conhecimento em node.js ussando a biblioteca express, usando o tipo de quesição http com verbos como get, put, delete e post, utilizando assim tambem o conceito de CRUD.
+O projeto Talker Manager permite gerenciar uma lista de palestrantes de forma prática e fácil. Foi uma ótima oportunidade para praticar e aprender novas habilidades de desenvolvimento web com Node.js e MongoDB
