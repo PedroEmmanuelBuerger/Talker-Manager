@@ -27,7 +27,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 
 ## Principais Aprendizados
-Durante o desenvolvimento deste projeto, foram explorados os conceitos de desenvolvimento web com Node.js e Express.js, bem como a integração com banco de dados MongoDB. Além disso, foram praticadas habilidades de HTML, CSS e JavaScript para criar uma interface simples e intuitiva para o usuário.
+Durante o desenvolvimento deste projeto, foram explorados os conceitos de desenvolvimento web com Node.js e Express.js, bem como a integração com banco de dados MySql,
+utilizando o modelo CRUD como base.
 
 ## Conclusão
-O projeto Talker Manager permite gerenciar uma lista de palestrantes de forma prática e fácil. Foi uma ótima oportunidade para praticar e aprender novas habilidades de desenvolvimento web com Node.js e MongoDB
+O projeto Talker Manager permite gerenciar uma lista de palestrantes de forma prática e fácil. Foi uma ótima oportunidade para praticar e aprender novas habilidades de desenvolvimento web com Node.js e MySql
