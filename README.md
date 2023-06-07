@@ -12,7 +12,6 @@ Visualizar lista de palestrantes: exibe a lista de todos os palestrantes adicion
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - JavaScript
 - Node.js
-- Express.js
 - MySql
 - Http requests
 
