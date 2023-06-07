@@ -14,6 +14,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - Node.js
 - MySql
 - Http requests
+- Express.js
 
 ## Instalação
 - Para instalar e executar o projeto localmente, siga os passos abaixo:
