@@ -1,34 +1,41 @@
-## Talker Manager
-Talker Manager é um projeto desenvolvido para gerenciar uma lista de palestrantes para um evento, permitindo que o usuário adicione, edite e remova palestrantes.
+# Talker Manager
 
-## Funcionalidades
-O projeto possui as seguintes funcionalidades:
-Adicionar palestrante: permite adicionar informações do palestrante, como nome, descrição e tempo de apresentação.
-Editar palestrante: permite editar informações de um palestrante já adicionado.
-Remover palestrante: permite remover um palestrante da lista.
-Visualizar lista de palestrantes: exibe a lista de todos os palestrantes adicionados.
+Talker Manager is a project developed to manage a list of speakers for an event, allowing the user to add, edit, and remove speakers.
 
-## Tecnologias Utilizadas
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
-- JavaScript
-- Node.js
-- MySql
-- Http requests
-- Express.js
+## Features
 
-## Instalação
-- Para instalar e executar o projeto localmente, siga os passos abaixo:
-- Clone o repositório para sua máquina local.
-- Instale o Node.js e o MongoDB em sua máquina.
-- Na pasta do projeto, instale as dependências executando o comando npm install.
-- Configure as variáveis de ambiente de acordo com o arquivo .env.example.
-- Inicie o servidor executando o comando npm start.
-- Acesse o projeto em seu navegador no endereço http://localhost:3001.
+The project includes the following features:
 
+- **Add Speaker**: Allows adding speaker information, such as name, description, and presentation time.
+- **Edit Speaker**: Allows editing the information of an already added speaker.
+- **Remove Speaker**: Allows removing a speaker from the list.
+- **View Speaker List**: Displays the list of all added speakers.
 
-## Principais Aprendizados
-Durante o desenvolvimento deste projeto, foram explorados os conceitos de desenvolvimento web com Node.js e Express.js, bem como a integração com banco de dados MySql,
-utilizando o modelo CRUD como base.
+## Technologies Used
 
-## Conclusão
-O projeto Talker Manager permite gerenciar uma lista de palestrantes de forma prática e fácil. Foi uma ótima oportunidade para praticar e aprender novas habilidades de desenvolvimento web com Node.js e MySql
+The project was developed using the following technologies:
+
+- **JavaScript**
+- **Node.js**
+- **MySQL**
+- **HTTP Requests**
+- **Express.js**
+
+## Installation
+
+To install and run the project locally, follow the steps below:
+
+1. Clone the repository to your local machine.
+2. Install Node.js and MongoDB on your machine.
+3. In the project folder, install the dependencies by running the command `npm install`.
+4. Configure the environment variables according to the `.env.example` file.
+5. Start the server by running the command `npm start`.
+6. Access the project in your browser at `http://localhost:3001`.
+
+## Key Learnings
+
+During the development of this project, the concepts of web development with Node.js and Express.js were explored, as well as integration with the MySQL database, using the CRUD model as the foundation.
+
+## Conclusion
+
+The Talker Manager project allows for practical and easy management of a speaker list. It was a great opportunity to practice and learn new web development skills with Node.js and MySQL.
